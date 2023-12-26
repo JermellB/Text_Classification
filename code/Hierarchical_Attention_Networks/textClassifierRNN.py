@@ -96,8 +96,7 @@ print('Total %s word vectors.' % len(embeddings_index))
 
 embedding_matrix = np.random.random((len(word_index) + 1, EMBEDDING_DIM))
 for word, i in word_index.items():
-    embedding_vector = embeddings_index.get(word)
-    if embedding_vector is not None:
+    if (embedding_vector := embeddings_index.get(word)) is not None:
         # words not found in embedding index will be all-zeros.
         embedding_matrix[i] = embedding_vector
         
@@ -150,8 +149,7 @@ class AttLayer(Layer):
 
 embedding_matrix = np.random.random((len(word_index) + 1, EMBEDDING_DIM))
 for word, i in word_index.items():
-    embedding_vector = embeddings_index.get(word)
-    if embedding_vector is not None:
+    if (embedding_vector := embeddings_index.get(word)) is not None:
         # words not found in embedding index will be all-zeros.
         embedding_matrix[i] = embedding_vector
         

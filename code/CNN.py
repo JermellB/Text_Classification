@@ -55,8 +55,7 @@ def Build_Model_CNN_Text(word_index, embeddings_index, nclasses, MAX_SEQUENCE_LE
     model = Sequential()
     embedding_matrix = np.random.random((len(word_index) + 1, EMBEDDING_DIM))
     for word, i in word_index.items():
-        embedding_vector = embeddings_index.get(word)
-        if embedding_vector is not None:
+        if (embedding_vector := embeddings_index.get(word)) is not None:
             # words not found in embedding index will be all-zeros.
             if len(embedding_matrix[i]) !=len(embedding_vector):
                 print("could not broadcast input array from shape",str(len(embedding_matrix[i])),
