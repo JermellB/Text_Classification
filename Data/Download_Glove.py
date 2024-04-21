@@ -9,9 +9,6 @@ RMDL: Random Multimodel Deep Learning for Classification
  * Comments and Error: email: kk7nc@virginia.edu
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-
-from __future__ import print_function
-
 import os, sys, tarfile
 import numpy as np
 import zipfile
